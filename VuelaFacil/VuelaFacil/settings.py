@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Vuelos',
     'rest_framework',
     'rest_framework.authtoken',
+    'Checkout',
 ]
 
 MIDDLEWARE = [
