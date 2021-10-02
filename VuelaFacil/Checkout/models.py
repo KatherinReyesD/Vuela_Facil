@@ -1,9 +1,10 @@
 from django.db import models
+from Usuarios.models import Perfil
 from Vuelos.models import TipoVuelo
 # Create your models here.
 
 class CarritoCompras(models.Model):
-    usuario = models.CharField(max_length=100)
+    usuario = models.ForeignKey(Perfil,on_delete=models.SET_NULL,null=True)
     fecha = models.DateField(auto_now_add=True)
     dcto = models.FloatField(default=0)
     pagado = models.BooleanField(default=False)
