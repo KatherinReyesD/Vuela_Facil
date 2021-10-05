@@ -9,10 +9,11 @@ class Aeropuerto (models.Model):
     Nombre=models.CharField(max_length=200)
     Ciudad=models.CharField(max_length=200)
     Disponibilidad=models.BooleanField(True)
+    norte=models.FloatField(default=0)
+    este=models.FloatField(default=0)
 
-    def __str__(self) -> str:
-        return super().__str__()
-    pass
+    def __str__(self):
+        return self.Nombre
 
 class Avion (models.Model):
     Id = models.CharField(max_length=100,primary_key=True)
@@ -20,18 +21,18 @@ class Avion (models.Model):
     NumSillasEco=models.IntegerField(default=0)
     NumSillasEje=models.IntegerField(default=0)
     PesoBodega=models.FloatField(default=0)
+
     UbicacionInicial=models.ForeignKey(Aeropuerto,on_delete=models.CASCADE)
 
-    def sillasDisponiblesEco():
-        return
+    def sillasDisponiblesEco(self,numeroVendidas):
+        return self.NumSillasEco - numeroVendidas
 
-    def sillasDisponiblesEje():
-        return
+    def sillasDisponiblesEje(self,numeroVendidas):
+        return self.NumSillasEje - numeroVendidas
 
-    def pesoDisponible():
-        return
+    def pesoDisponible(self,pesovendido):
+        return self.PesoBodega - pesovendido
 
-    pass
 
 class TipoVuelo(models.Model):
 
@@ -39,12 +40,21 @@ class TipoVuelo(models.Model):
     AeroSalida=models.ForeignKey(Aeropuerto,on_delete=models.CASCADE,related_name='+')
     AeroLlegada=models.ForeignKey(Aeropuerto,on_delete=models.CASCADE,related_name='+')
     id_Avion=models.ForeignKey(Avion,on_delete=models.CASCADE)
+    NumSillasEcoVendidas=models.IntegerField(default=0)
+    NumSillasEjeVendidas=models.IntegerField(default=0)
     Peso=models.FloatField(default=0)
     Fecha=models.DateTimeField()
+    NumeroSillasVendidas=models.IntegerField(default=0)
 
+    def sillasVendidasEco(self):
+        return self.id_Avion.sillasDisponiblesEco(self.NumSillasEcoVendidas)
 
-    def __str__(self) -> str:
-        return super().__str__()
+    def sillasVendidasEje(self,):
+        return self.id_Avion.sillasDisponiblesEje(self.NumeroSillasVendidas)
 
-    pass
+    def pesoOcupado(self):
+        return self.id_Avion.pesoDisponible(self.Peso)
 
+    def __str__(self):
+        return self.Tipo
+    
