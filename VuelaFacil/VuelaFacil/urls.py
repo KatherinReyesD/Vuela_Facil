@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from .view import LandingPage,checkout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vuelos/api/',include('Vuelos.urls')),
     path('checkout/api/', include('Checkout.urls')),
-    path('usuarios/api/', include('Usuarios.urls'))
+    path('usuarios/api/', include('Usuarios.urls')),
+    path('',LandingPage.as_view()),
+    path('checkout/api/',checkout.as_view()),
 ]

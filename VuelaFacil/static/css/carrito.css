@@ -1,0 +1,48 @@
+#barra{
+    
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .05);
+    font-family:Cambria;
+    font-size: 120%;
+    font-style: italic;
+}
+
+#menu{
+
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+#principal{
+    font-family: Cambria;
+    font-style: italic;
+    text-align: center;
+    
+
+}
+
+#resumen{
+
+    margin: 40px;
+    padding: 30px;
+    
+    
+}
+
+#pasarela{
+
+    background-color: blueviolet;
+    border-radius: 30px;
+    margin: 20px;
+    padding: 29px;
+}
+
+#datos{
+    background-color: gray;
+    border-radius: 30px;
+    margin: 90px;
+    padding: 30px;
+    
+    
+}

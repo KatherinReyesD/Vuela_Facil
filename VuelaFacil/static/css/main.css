@@ -1,0 +1,51 @@
+#base{
+    
+    background: url("../img/avion2.png") no-repeat center center fixed;
+    background-size: cover;
+	background-attachment: fixed; 
+	align-content: center;
+	padding-top: 90px;
+	min-height: 700px;
+	color: black;
+}
+
+#barra{
+    
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .05);
+    font-family:Cambria;
+    font-size: 120%;
+    font-style: italic;
+}
+
+#principal{
+    font-family: Cambria;
+    font-style: italic;
+    text-align: center;
+    
+
+}
+
+#ventas{
+    padding-top: 30px;
+    margin: 30px;
+    font-family: Cambria;
+    font-style: italic;
+    text-align: center;
+
+}
+
+#consultas{
+
+    background-color: cornflowerblue;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#menu{
+
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
