@@ -16,6 +16,9 @@
 
 #principal{
     font-family: Cambria;
+    background: url("../img/avion.png") no-repeat center center fixed;
+    background-size: cover;
+	background-attachment: fixed; 
     font-style: italic;
     text-align: center;
     
@@ -39,10 +42,17 @@
 }
 
 #datos{
-    background-color: gray;
+    background-color:blueviolet;
+    height: 250px;
+    width: 200px;
     border-radius: 30px;
     margin: 90px;
     padding: 30px;
     
-    
+
+}
+
+#fuentes{
+
+    color:cornsilk;
 }
